@@ -1,0 +1,30 @@
+[project]
+name = "meshcore-bitchat-bridge"
+version = "0.3.0"
+description = "Bridge Bitchat (BLE mesh chat) to MeshCore (LoRa mesh) via a companion node"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = [
+    "meshcore>=2.0",
+    "bleak>=0.22,<4",
+    "pynacl>=1.5",
+]
+
+# uv syncs the "dev" group by default (plain `uv sync` / `uv run`); CI relies
+# on that. requirements*.txt remain for the manual venv install path (README).
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+meshcore-bitchat-bridge = "mcbridge.main:run"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["mcbridge"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Local state (keep example only)
+config.toml
+identity.json
+notes/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,17 @@
+[Unit]
+Description=MeshCore <-> Bitchat BLE bridge
+Documentation=https://github.com/wildpasta/meshcore-bitchat-bridge
+Wants=bluetooth.service
+After=bluetooth.service network.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=__DIR__
+ExecStart=__DIR__/.venv/bin/python __DIR__/bridge.py --port __PORT__
+Restart=on-failure
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

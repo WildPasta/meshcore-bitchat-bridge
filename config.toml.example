@@ -1,0 +1,31 @@
+# Optional configuration file for meshcore-bitchat-bridge.
+# Copy to: ~/.config/meshcore-bitchat-bridge/config.toml
+# CLI arguments override values set here.
+
+# Serial port of the MeshCore companion node. Leave unset to auto-try
+# /dev/ttyUSB0 then /dev/ttyACM0.
+#port = "/dev/ttyUSB0"
+
+# MeshCore hashtag channel to bridge (without the leading '#').
+# Any node that joins the same #hashtag sees the bridged traffic.
+hashtag = "bitchat"
+
+# Nickname the bridge uses in Bitchat.
+nickname = "MeshCoreBridge"
+
+# Where the persistent bridge identity (keys) is stored.
+# state_dir = "/home/pi/.config/meshcore-bitchat-bridge"
+
+# Enable debug logging (shorthand for log_level = "debug").
+#debug = false
+
+# Log level: debug, info, warning, error or critical. Overrides the debug
+# flag when set; default is info.
+#log_level = "info"
+
+# Log file location. Default: <state_dir>/logs/bridge.log — rotated daily at
+# midnight, console output is mirrored to it either way.
+#log_file = "/home/pi/.config/meshcore-bitchat-bridge/logs/bridge.log"
+
+# Days of rotated log files to keep (minimum 1, default 14).
+#log_keep_days = 14
